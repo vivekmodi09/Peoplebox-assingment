@@ -1,0 +1,17 @@
+Documentation of Approach and Assumptions
+This code utilizes the following assumptions and approaches:
+
+1. Assumptions:
+
+The input data contains consistent and accurate information about employee records.
+Missing values in compensation, engagement, and review data can be reasonably approximated by inheriting values from the previous record.
+The far-future date (2100-01-01) is an acceptable representation for the end date of the latest record for each employee.
+2. Approach:
+
+The code calculates Effective Date and End Date for each record, ensuring end dates fall one day before the next effective date to prevent overlap.
+It transforms the data into a row-based format, representing each period with consistent data points.
+Missing values are filled by inheriting data from the most recent past record for the same employee.
+Unchanged values in non-date related fields are preserved across different records.
+
+The output data is accurate, but in the output.csv format, the date should not be in the year-month format.
+The final output is a CSV file suitable for further analysis and reporting.
